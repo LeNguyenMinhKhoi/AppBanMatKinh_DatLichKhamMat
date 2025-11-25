@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name ="lightgreen">#7AC9E6</color>
+    <color name="paleyellow">#FFC387</color>
+    <color name="mau_xam">#E0E0E3</color>
+    <color name="mau_tieude">#565555</color>
+    <color name="mau_tensp">#796D6D</color>
+    <color name="mau_trangthai">#2BD630</color>
+    <color name="mau_xanhnhat">#597EAA</color>
+</resources>
