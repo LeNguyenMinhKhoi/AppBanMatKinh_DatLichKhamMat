@@ -1,6 +1,7 @@
 package com.example.banmatkinh_datlichkhammat.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.banmatkinh_datlichkhammat.R;
+import com.example.banmatkinh_datlichkhammat.activity.ChiTietSanPhamActivity;
 import com.example.banmatkinh_datlichkhammat.model.sanphamALL;
 
 import java.text.DecimalFormat;
@@ -40,6 +42,20 @@ public class tatcasanphamAdapter extends RecyclerView.Adapter<tatcasanphamAdapte
         DecimalFormat df = new DecimalFormat("#,###,### đ");
         String giaspFormat = df.format(dstatcasp.get(position).getGia());
         holder.giasp.setText(giaspFormat);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ChiTietSanPhamActivity.class);
+                intent.putExtra("anh_sp",dstatcasp.get(position).getImg());
+                intent.putExtra("ten_sp",dstatcasp.get(position).getTensp());
+
+                String giaFormatted = df.format(dstatcasp.get(position).getGia());
+                intent.putExtra("gia_sp", giaFormatted);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

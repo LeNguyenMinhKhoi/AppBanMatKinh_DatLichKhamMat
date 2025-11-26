@@ -158,11 +158,11 @@
                 android:scrollbars="vertical"/>
 
 
-            <!-- Vân vân... giữ nguyên các phần còn lại -->
+
         </LinearLayout>
     </ScrollView>
 
-    <!-- NAV BOTTOM -->
+
     <LinearLayout
         android:id="@+id/nav_bot"
         android:layout_width="match_parent"

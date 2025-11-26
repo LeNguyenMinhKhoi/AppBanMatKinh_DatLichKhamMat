@@ -1,6 +1,8 @@
 package com.example.banmatkinh_datlichkhammat.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.banmatkinh_datlichkhammat.R;
+import com.example.banmatkinh_datlichkhammat.activity.ChiTietSanPhamActivity;
 import com.example.banmatkinh_datlichkhammat.model.sanpham;
 
 import java.text.DecimalFormat;
@@ -35,13 +38,27 @@ public class sanphamAdapter extends RecyclerView.Adapter<sanphamAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull sanphamAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull sanphamAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.img.setImageResource(dssp.get(position).getImg());
         holder.tensp.setText(dssp.get(position).getTensp());
 
         DecimalFormat df = new DecimalFormat("#,###,### đ");
         String giaFormatted = df.format(dssp.get(position).getGia());
         holder.gia.setText(giaFormatted);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ChiTietSanPhamActivity.class);
+                intent.putExtra("anh_sp",dssp.get(position).getImg());
+                intent.putExtra("ten_sp",dssp.get(position).getTensp());
+
+                String giaFormatted = df.format(dssp.get(position).getGia());
+                intent.putExtra("gia_sp", giaFormatted);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

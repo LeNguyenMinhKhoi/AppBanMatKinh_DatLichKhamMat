@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BanMatKinh_DatLichKhamMat">
         <activity
+            android:name=".activity.ChiTietSanPhamActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.introActivity"
             android:exported="true">
             <intent-filter>
@@ -23,7 +26,6 @@
         <activity
             android:name=".activity.TrangChuActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>
