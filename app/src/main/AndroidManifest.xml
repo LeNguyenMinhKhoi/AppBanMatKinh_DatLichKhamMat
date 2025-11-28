@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BanMatKinh_DatLichKhamMat">
         <activity
+            android:name=".activity.GiohangActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ChiTietSanPhamActivity"
             android:exported="false" />
         <activity

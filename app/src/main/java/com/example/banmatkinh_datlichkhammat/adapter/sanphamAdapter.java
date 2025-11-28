@@ -23,7 +23,7 @@ public class sanphamAdapter extends RecyclerView.Adapter<sanphamAdapter.ViewHold
 
     private ArrayList<sanpham> dssp;
     private Context context;
-
+    private final DecimalFormat df = new DecimalFormat("#,###,### đ");
     public sanphamAdapter(@NonNull ArrayList<sanpham> dssp, Context context) {
         this.dssp = dssp;
         this.context = context;
@@ -42,17 +42,18 @@ public class sanphamAdapter extends RecyclerView.Adapter<sanphamAdapter.ViewHold
         holder.img.setImageResource(dssp.get(position).getImg());
         holder.tensp.setText(dssp.get(position).getTensp());
 
-        DecimalFormat df = new DecimalFormat("#,###,### đ");
-        String giaFormatted = df.format(dssp.get(position).getGia());
+        String giaFormatted = df.format(dssp.get(position).getGia()); // Dùng df đã khai báo
         holder.gia.setText(giaFormatted);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ChiTietSanPhamActivity.class);
+                intent.putExtra("masp", dssp.get(position).getId());
                 intent.putExtra("anh_sp",dssp.get(position).getImg());
                 intent.putExtra("ten_sp",dssp.get(position).getTensp());
 
+                // Dùng df đã khai báo
                 String giaFormatted = df.format(dssp.get(position).getGia());
                 intent.putExtra("gia_sp", giaFormatted);
 

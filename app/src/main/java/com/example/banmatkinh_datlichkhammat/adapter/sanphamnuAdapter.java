@@ -1,5 +1,6 @@
 package com.example.banmatkinh_datlichkhammat.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -36,7 +37,7 @@ public class sanphamnuAdapter extends RecyclerView.Adapter<sanphamnuAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull sanphamnuAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull sanphamnuAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.imgspnu.setImageResource(dsspnu.get(position).getImg());
         holder.tenspnu.setText(dsspnu.get(position).getTensp());
 

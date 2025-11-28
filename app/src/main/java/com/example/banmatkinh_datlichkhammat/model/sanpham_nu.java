@@ -3,12 +3,12 @@ package com.example.banmatkinh_datlichkhammat.model;
 public class sanpham_nu {
     private int img;
     private String tensp;
-    private Float gia;
+    private int gia;
 
     public sanpham_nu() {
     }
 
-    public sanpham_nu(int img, String tensp, Float gia) {
+    public sanpham_nu(int img, String tensp, int gia) {
         this.img = img;
         this.tensp = tensp;
         this.gia = gia;
@@ -30,11 +30,11 @@ public class sanpham_nu {
         this.tensp = tensp;
     }
 
-    public Float getGia() {
+    public int getGia() {
         return gia;
     }
 
-    public void setGia(Float gia) {
+    public void setGia(int gia) {
         this.gia = gia;
     }
 }

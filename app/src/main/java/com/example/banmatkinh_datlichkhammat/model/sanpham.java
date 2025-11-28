@@ -1,10 +1,18 @@
 package com.example.banmatkinh_datlichkhammat.model;
 
 public class sanpham {
+    private int id;
     private int img;
     private String tensp;
-    private Float gia;
+    private int gia;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getImg() {
         return img;
@@ -22,18 +30,19 @@ public class sanpham {
         this.tensp = tensp;
     }
 
-    public Float getGia() {
+    public int getGia() {
         return gia;
     }
 
-    public void setGia(Float gia) {
+    public void setGia(int gia) {
         this.gia = gia;
     }
 
     public sanpham() {
     }
 
-    public sanpham(int img, String tensp, Float gia) {
+    public sanpham(int id,int img, String tensp, int gia) {
+        this.id=id;
         this.img = img;
         this.tensp = tensp;
         this.gia = gia;
