@@ -180,6 +180,7 @@
             android:orientation="vertical">
 
             <ImageButton
+                android:id="@+id/imgb_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -202,9 +203,11 @@
             android:layout_marginEnd="50dp"
             android:orientation="vertical">
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/donhang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 app:tint="@null"
                 app:srcCompat="@drawable/order"/>
             <TextView

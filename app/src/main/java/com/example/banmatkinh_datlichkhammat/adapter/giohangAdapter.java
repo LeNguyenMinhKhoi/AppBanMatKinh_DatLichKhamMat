@@ -5,13 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.banmatkinh_datlichkhammat.R;
+import com.example.banmatkinh_datlichkhammat.helper.giohangHelper;
 import com.example.banmatkinh_datlichkhammat.model.giohang;
 
 import java.text.DecimalFormat;
@@ -32,8 +35,11 @@ public class giohangAdapter extends ArrayAdapter<giohang> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
         ImageView img;
         TextView tensp, giasp, sl;
+        Button btn_xoasanpham;
+        int userId = 1;
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(resource,null);
 
@@ -41,6 +47,7 @@ public class giohangAdapter extends ArrayAdapter<giohang> {
         tensp = view.findViewById(R.id.tensp_giohang);
         giasp = view.findViewById(R.id.giasp_giohang);
         sl = view.findViewById(R.id.soluong);
+        btn_xoasanpham = view.findViewById(R.id.btn_xoasanpham);
 
         giohang giohang = dsgiohang.get(position);
 
@@ -51,6 +58,16 @@ public class giohangAdapter extends ArrayAdapter<giohang> {
         giasp.setText(giaFormat);
         sl.setText("Số lượng: "+ giohang.getSoluong());
 
+        btn_xoasanpham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                giohangHelper db = new giohangHelper(context);
+                db.xoasanpham(userId ,giohang.getMasp());
+                dsgiohang.remove(position);
+                notifyDataSetChanged();
+                Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
 }

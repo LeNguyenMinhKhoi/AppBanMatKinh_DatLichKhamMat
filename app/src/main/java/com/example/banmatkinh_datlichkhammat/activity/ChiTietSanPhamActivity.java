@@ -83,13 +83,9 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
                     return;
                 }
                 int soluong = Integer.parseInt(slStr);
-
-                if(sanphamID <= 0){
-                    Toast.makeText(ChiTietSanPhamActivity.this, "Sản phẩm không hợp lệ", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                giohangHelper.addToCart(userID, sanphamID, soluong);
+                boolean isSanPhamNam = true;
+                String type = isSanPhamNam ? "nam" : "nu";
+                giohangHelper.addToCart(userID, sanphamID, soluong, type);
                 Toast.makeText(ChiTietSanPhamActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
             }
         });
@@ -111,25 +107,6 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
             }
         });
 
-    }
-    private void exportDbShop() {
-        File dbFile = new File(getDatabasePath("db_shop.sqlite").getPath());
-        File destFile = new File(getExternalFilesDir(null), "db_shop_export.sqlite");
-
-        try (InputStream in = new FileInputStream(dbFile);
-             OutputStream out = new FileOutputStream(destFile)) {
-
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = in.read(buffer)) > 0) {
-                out.write(buffer, 0, length);
-            }
-
-            Toast.makeText(this, "Đã sao chép DB ra: " + destFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Lỗi khi sao chép DB", Toast.LENGTH_SHORT).show();
-        }
     }
 
 }

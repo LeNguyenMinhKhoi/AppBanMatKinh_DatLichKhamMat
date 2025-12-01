@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class sanphamnuHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "db_shop.sqlite";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
 
 
     public sanphamnuHelper(Context context){
@@ -28,6 +28,7 @@ public class sanphamnuHelper extends SQLiteOpenHelper {
             sanpham_nu sp = new sanpham_nu();
             int imageId = 0;
             switch(cursor.getInt(cursor.getColumnIndexOrThrow("image"))) {
+
                 case 101: imageId = R.drawable.sp1_nu; break;
                 case 102: imageId = R.drawable.sp2_nu; break;
                 case 103: imageId = R.drawable.sp3_nu; break;
@@ -41,12 +42,10 @@ public class sanphamnuHelper extends SQLiteOpenHelper {
         cursor.close();
         return list;
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
 
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 

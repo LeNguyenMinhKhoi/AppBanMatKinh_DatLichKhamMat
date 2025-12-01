@@ -1,6 +1,7 @@
 package com.example.banmatkinh_datlichkhammat.model;
 
 public class giohang {
+    private int masp;
     private int img;
     private String tensp;
     private float gia;
@@ -16,6 +17,14 @@ public class giohang {
 
     public String getTensp() {
         return tensp;
+    }
+
+    public int getMasp() {
+        return masp;
+    }
+
+    public void setMasp(int masp) {
+        this.masp = masp;
     }
 
     public void setTensp(String tensp) {
@@ -38,7 +47,8 @@ public class giohang {
         this.soluong = soluong;
     }
 
-    public giohang(int img, String tensp, float gia, int soluong) {
+    public giohang(int masp,int img, String tensp, float gia, int soluong) {
+        this.masp = masp;
         this.img = img;
         this.tensp = tensp;
         this.gia = gia;

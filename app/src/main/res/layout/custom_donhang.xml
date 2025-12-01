@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+
+
+    <TextView
+        android:id="@+id/txtMaDon"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã đơn: DH001"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtTongTien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tổng tiền: 1,820,000 đ"
+        android:padding="8dp"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtNgayDat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày đặt: 01/12/2025"
+        android:padding="8dp"
+        android:textSize="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColor="@color/mau_trangthai"
+        android:text="Trạng thái đơn: Chờ xác nhận"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_xemchitietdonhang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem chi tiết đơn hàng"
+            android:textSize="15dp"
+            android:backgroundTint="@color/mau_xanhnhat"/>
+        <Button
+            android:id="@+id/btn_huydon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy đơn"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/mau_xam"/>
+    </LinearLayout>
+</LinearLayout>

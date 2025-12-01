@@ -49,6 +49,7 @@ public class sanphamnuAdapter extends RecyclerView.Adapter<sanphamnuAdapter.View
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ChiTietSanPhamActivity.class);
+                intent.putExtra("type", "nu");
                 intent.putExtra("anh_sp",dsspnu.get(position).getImg());
                 intent.putExtra("ten_sp",dsspnu.get(position).getTensp());
 

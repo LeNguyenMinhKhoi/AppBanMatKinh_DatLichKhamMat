@@ -1,6 +1,7 @@
 package com.example.banmatkinh_datlichkhammat.activity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -44,7 +45,7 @@ public class TrangChuActivity extends AppCompatActivity {
     sanphamnuHelper sanphamnuHelper;
     tatcasanphamHelper tatcasanphamHelper;
 
-    ImageButton img_giohang;
+    ImageButton imgb_giohang, imgb_donhang;
 
 
     RecyclerView recyclerView_danhmuc, recyclerView_sanphamnam,recyclerView_sanphamnu,recyclerView_tatcasp;
@@ -59,7 +60,6 @@ public class TrangChuActivity extends AppCompatActivity {
             return insets;
         });
 
-        DBConfigUtil.copyDBFromAsset(this);
         addControl();
         addEvent();
     }
@@ -69,7 +69,8 @@ public class TrangChuActivity extends AppCompatActivity {
         recyclerView_sanphamnu = findViewById(R.id.rv_spNuBanChay);
         recyclerView_tatcasp = findViewById(R.id.rv_tatcasp);
 
-        img_giohang = findViewById(R.id.giohang);
+        imgb_giohang = findViewById(R.id.giohang);
+        imgb_donhang = findViewById(R.id.donhang);
 
         recyclerView_danhmuc.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         dsdanhmuc = new ArrayList<danhmuc>();
@@ -102,10 +103,17 @@ public class TrangChuActivity extends AppCompatActivity {
 
     }
     public void addEvent(){
-        img_giohang.setOnClickListener(new View.OnClickListener() {
+        imgb_giohang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TrangChuActivity.this,GiohangActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgb_donhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangChuActivity.this,DonHangActivity.class);
                 startActivity(intent);
             }
         });
