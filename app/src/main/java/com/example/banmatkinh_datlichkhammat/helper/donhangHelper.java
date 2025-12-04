@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class donhangHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "db_shop.sqlite";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 4;
 
     public donhangHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -28,7 +28,7 @@ public class donhangHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
 
-    // Tạo đơn hàng mới
+
     public void themDonHang(long orderId, int userId, int totalPrice, String date){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();

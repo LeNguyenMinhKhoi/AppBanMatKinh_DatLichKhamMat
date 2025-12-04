@@ -45,7 +45,7 @@ public class TrangChuActivity extends AppCompatActivity {
     sanphamnuHelper sanphamnuHelper;
     tatcasanphamHelper tatcasanphamHelper;
 
-    ImageButton imgb_giohang, imgb_donhang;
+    ImageButton imgb_giohang, imgb_donhang, imgb_datlich;
 
 
     RecyclerView recyclerView_danhmuc, recyclerView_sanphamnam,recyclerView_sanphamnu,recyclerView_tatcasp;
@@ -59,7 +59,6 @@ public class TrangChuActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         addControl();
         addEvent();
     }
@@ -70,7 +69,8 @@ public class TrangChuActivity extends AppCompatActivity {
         recyclerView_tatcasp = findViewById(R.id.rv_tatcasp);
 
         imgb_giohang = findViewById(R.id.giohang);
-        imgb_donhang = findViewById(R.id.donhang);
+        imgb_donhang = findViewById(R.id.imgb_donhang);
+        imgb_datlich = findViewById(R.id.imgb_datlich);
 
         recyclerView_danhmuc.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         dsdanhmuc = new ArrayList<danhmuc>();
@@ -114,6 +114,13 @@ public class TrangChuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TrangChuActivity.this,DonHangActivity.class);
+                startActivity(intent);
+            }
+        });
+        imgb_datlich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangChuActivity.this,DatLichKhamActivity.class);
                 startActivity(intent);
             }
         });

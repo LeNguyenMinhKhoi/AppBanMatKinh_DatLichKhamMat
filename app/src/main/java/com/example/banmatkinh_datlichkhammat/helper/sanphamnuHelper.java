@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class sanphamnuHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "db_shop.sqlite";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 4;
 
 
     public sanphamnuHelper(Context context){

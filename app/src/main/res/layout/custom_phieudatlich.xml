@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+
+    <TextView
+        android:id="@+id/txtMaPhieu"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã phiếu: DH001"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtHoten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ tên: Lê Nguyễn Minh Khôi"
+        android:padding="8dp"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtNgayDat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày đặt: 01/12/2025"
+        android:padding="8dp"
+        android:textSize="16dp" />
+    <TextView
+        android:id="@+id/txtgiodat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giờ đặt: 03:15PM"
+        android:padding="8dp"
+        android:textSize="16dp" />
+    <TextView
+        android:id="@+id/txtHinhThuc"
+        android:padding="8dp"
+        android:text="Hình thức:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/txtnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Ghi chú: Khám tổng quát"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColor="@color/mau_trangthai"
+        android:text="Trạng thái đơn: Chờ xác nhận"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_xemchitietdonhang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem chi tiết đơn hàng"
+            android:textSize="15dp"
+            android:backgroundTint="@color/mau_xanhnhat"/>
+        <Button
+            android:id="@+id/btn_huyphieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy phiếu"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/mau_xam"/>
+    </LinearLayout>
+</LinearLayout>

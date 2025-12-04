@@ -46,17 +46,14 @@ public class DonHangAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.custom_donhang, parent, false);
-            holder = new ViewHolder();
-            holder.txtMaDon = convertView.findViewById(R.id.txtMaDon);
-            holder.txtTongTien = convertView.findViewById(R.id.txtTongTien);
-            holder.txtNgayDat = convertView.findViewById(R.id.txtNgayDat);
-            holder.btn_huydon = convertView.findViewById(R.id.btn_huydon);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-        }
+        convertView = inflater.inflate(R.layout.custom_donhang, parent, false);
+        holder = new ViewHolder();
+
+        holder.txtMaDon = convertView.findViewById(R.id.txtMaDon);
+        holder.txtTongTien = convertView.findViewById(R.id.txtTongTien);
+        holder.txtNgayDat = convertView.findViewById(R.id.txtNgayDat);holder.btn_huydon = convertView.findViewById(R.id.btn_huydon);
+        convertView.setTag(holder);
+
 
         donhang dh = list.get(position);
         holder.txtMaDon.setText("Mã đơn: " + dh.getMadonhang());
@@ -64,11 +61,9 @@ public class DonHangAdapter extends BaseAdapter {
         holder.txtNgayDat.setText("Ngày đặt: " + dh.getNgaydat());
 
         holder.btn_huydon.setOnClickListener(v -> {
-            // Xóa trong database
             donhangHelper helper = new donhangHelper(context);
-            helper.xoaDonHang(dh.getMadonhang()); // bạn cần viết hàm xoaDonHang trong helper
+            helper.xoaDonHang(dh.getMadonhang());
 
-            // Xóa khỏi list và cập nhật Adapter
             list.remove(position);
             notifyDataSetChanged();
         });

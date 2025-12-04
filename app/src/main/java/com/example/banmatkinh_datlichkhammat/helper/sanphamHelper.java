@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class sanphamHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "db_shop.sqlite";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 4;
 
 
     public sanphamHelper(Context context){

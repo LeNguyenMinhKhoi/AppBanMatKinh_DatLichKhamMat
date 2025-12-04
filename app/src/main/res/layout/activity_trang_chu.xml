@@ -204,7 +204,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/donhang"
+                android:id="@+id/imgb_donhang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -225,10 +225,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/imgb_datlich"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@android:color/transparent"
                 app:tint="@null"
                 app:srcCompat="@drawable/calendar"/>
             <TextView

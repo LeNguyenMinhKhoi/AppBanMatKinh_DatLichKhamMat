@@ -25,7 +25,7 @@ public class DonHangActivity extends AppCompatActivity {
     ListView lvDonHang;
     ArrayList<donhang> listDonHang;
     DonHangAdapter adapter;
-    ImageButton imgb_home;
+    ImageButton imgb_home, imgb_donhang, imgb_datlich, imgb_toi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +42,8 @@ public class DonHangActivity extends AppCompatActivity {
     public void addControl(){
         lvDonHang = findViewById(R.id.thongtindonhang);
         imgb_home = findViewById(R.id.imgb_home);
+        imgb_donhang = findViewById(R.id.imgb_donhang);
+        imgb_datlich = findViewById(R.id.imgb_datlich);
         loadDonHang();
     }
     private void loadDonHang(){
@@ -71,5 +73,13 @@ public class DonHangActivity extends AppCompatActivity {
 
             }
         });
+        imgb_datlich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DonHangActivity.this, DatLichKhamActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

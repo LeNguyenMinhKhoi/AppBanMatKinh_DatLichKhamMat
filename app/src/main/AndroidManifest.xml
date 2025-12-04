@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BanMatKinh_DatLichKhamMat">
         <activity
+            android:name=".activity.TaoPhieuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DatLichKhamActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.DonHangActivity"
             android:exported="false" />
         <activity

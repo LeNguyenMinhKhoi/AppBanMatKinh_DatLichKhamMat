@@ -15,11 +15,10 @@ import java.util.ArrayList;
 
 public class giohangHelper extends SQLiteOpenHelper {
     private static final String DB_NAME ="db_shop.sqlite";
-    private static final int DB_VERSION = 3;
+    private static final int DB_VERSION = 4;
     public giohangHelper(Context context){
         super(context,DB_NAME,null,DB_VERSION);
     }
-
 
 
     public void addToCart(int userID, int productID, int quantity, String type) {
